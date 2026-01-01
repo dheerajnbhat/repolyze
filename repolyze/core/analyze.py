@@ -12,7 +12,7 @@ from repolyze.models import (
     RepoStats, FileStat, DirStat,
     StructureStats, SizeStats, FileTypeStats,
     LanguageStats, TimeStats, HygieneStats,
-    MetadataStats, TreeNode,
+    MetadataStats
 )
 
 
