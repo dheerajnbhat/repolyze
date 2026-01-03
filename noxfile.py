@@ -19,13 +19,7 @@ def install_repolyze(session):
 
 def base_test(session):
     install_repolyze(session)
-    session.run("pytest", "tests", "-n", "auto")
-
-
-@nox.session(python=["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"])
-def test_with_py_versions(session):
-    """Run tests on multiple Python versions."""
-    base_test(session)
+    session.run("pytest", "tests")
 
 
 @nox.session()
@@ -49,3 +43,9 @@ def docs(session):
         "docs/source",
         "docs/build/html"
     )
+
+
+@nox.session(python=["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"])
+def test_with_py_versions(session):
+    """Run tests on multiple Python versions."""
+    base_test(session)
